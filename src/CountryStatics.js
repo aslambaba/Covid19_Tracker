@@ -32,6 +32,7 @@ export default function CountryStatics({ }) {
   })
   return (
     <div>
+      <h1>Search By Country</h1>
       <form onSubmit={handleSubmit}>
       <select id="couo" name="country">
        <option value="Afghanistan">Afghanistan</option>
