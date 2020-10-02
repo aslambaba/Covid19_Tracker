@@ -7,10 +7,11 @@ import Tab from '@material-ui/core/Tab';
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
-        position: 'absolute',
+        position: 'fixed',
         left: 0,
         bottom: 0,
-        right: 0,
+        textAlign: 'center',
+        width: '100%'
     },
 });
 
