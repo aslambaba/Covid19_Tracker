@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -39,6 +38,9 @@ export default function CountryStatics({ }) {
         else {
           console.log('not found');
         }
+        return(
+          <h1>ws</h1>
+        )
       });
 
     }
@@ -53,7 +55,6 @@ export default function CountryStatics({ }) {
             <option value="Afghanistan" >Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
-            <option value="American Samoa">American Samoa</option>
             <option value="Andorra">Andorra</option>
             <option value="Angola">Angola</option>
             <option value="Anguilla">Anguilla</option>
@@ -310,7 +311,6 @@ export default function CountryStatics({ }) {
             <option value="Afghanistan" >Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
-            <option value="American Samoa">American Samoa</option>
             <option value="Andorra">Andorra</option>
             <option value="Angola">Angola</option>
             <option value="Anguilla">Anguilla</option>
