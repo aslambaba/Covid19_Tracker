@@ -23,15 +23,13 @@ export default function GlobalStatic() {
     const [global, setGlobal] = useState({});
     useEffect(() => {
         async function getglobal() {
-            const globalapi = await fetch('https://api.thevirustracker.com/free-api?global=stats');
+            const globalapi = await fetch('https://api.covid19api.com/summary');
             const globalapijson = await globalapi.json();
-
-            const globaldata = globalapijson.results[0];
-            delete globaldata.source;
-            setGlobal(globaldata);
+            console.log(globalapijson.Global);
+            setGlobal(globalapijson.Global);
         }
         getglobal();
-    })
+    }, [])
 
     const classes = useStyles();
 
