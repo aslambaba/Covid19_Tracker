@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  main_heading: {
-    textAlign: 'center',
-
-  },
-}));
+import './style/country.css';
 
 export default function CountryStatics({ }) {
 
-  const classes = useStyles();
   const [listcountries, Setlistcountries] = useState([]);
   const [country, Setcountry] = useState({});
 
@@ -47,16 +31,16 @@ export default function CountryStatics({ }) {
 
   if (listcountries.length == 0) {
     return (
-      <div>
-        <h1>Loading</h1>
+      <div className='loadingSection'>
+        <h1>Loading...</h1>
       </div>
     );
   }
   else if (listcountries.length != 0) {
     if (Object.keys(country).length == 0) {
       return (
-        <div>
-          <h1>By Country</h1>
+        <div className='SearchSection'>
+          <h1>Search By Country</h1>
           <select name='Country'>
             {
               listcountries.map((obj, ind) => {
@@ -70,9 +54,9 @@ export default function CountryStatics({ }) {
     }
     else if (Object.keys(country).length != 0) {
       return (
-        <div>
-          <div>
-            <h1>By Country</h1>
+        <div className='countrybody'>
+          <div className='SearchSection'>
+            <h1>Search By Country</h1>
             <select name='Country'>
               {
                 listcountries.map((obj, ind) => {
@@ -82,18 +66,26 @@ export default function CountryStatics({ }) {
             </select>
             <button onClick={Search}>Search</button>
           </div>
-          <div className={classes.root}>
-            <h1 className={classes.main_heading}>Gobally Statics of COVID-19</h1>
+          <div className='root'>
+            <h1 className='CountryHeading'>Gobally Statics of COVID-19</h1>
             <Grid container spacing={3}>
               {
                 Object.keys(country).map((obj, ind) => {
-                  console.log()
+                  let conditionalcss;
+                  if (obj == 'TotalDeaths') {
+                    conditionalcss = 'totaldeath';
+                  }
+                  if (obj == 'TotalRecovered') {
+                    conditionalcss = 'totalrecovered'
+                  }
                   return (
                     <Grid item xs={4} key={ind}>
-                      <Paper className={classes.paper}><div>
-                        <h3>{obj}</h3>
-                        <h4>{country[obj]}</h4>
-                      </div></Paper>
+                      <Paper>
+                        <div className={`paper ${conditionalcss}`}>
+                          <h3>{obj}</h3>
+                          <h4>{country[obj]}</h4>
+                        </div>
+                      </Paper>
                     </Grid>
                   )
                 })

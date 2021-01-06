@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    },
-    main_heading: {
-        textAlign: 'center',
-
-    },
-}));
+import './style/global.css';
 
 export default function GlobalStatic() {
 
@@ -31,27 +16,35 @@ export default function GlobalStatic() {
         getglobal();
     }, [])
     console.log(global)
-    const classes = useStyles();
     if (Object.keys(global).length == 0) {
         return (
-            <div>
+            <div className='loadingSection'>
                 <h1>Loading....</h1>
             </div>
         )
     }
     else {
         return (
-            <div className={classes.root}>
-                <h1 className={classes.main_heading}>Gobally Statics of COVID-19</h1>
+            <div className='root'>
+                <h1 className='GlobalHeading'>Gobally Statics of COVID-19</h1>
                 <Grid container spacing={3}>
                     {
                         Object.keys(global).map((obj, ind) => {
+                            let conditionalcss;
+                            if(obj == 'TotalDeaths'){
+                                conditionalcss = 'totaldeath';
+                            }
+                            if(obj == 'TotalRecovered'){
+                                conditionalcss = 'totalrecovered'
+                            }
                             return (
                                 <Grid item xs={4} key={ind}>
-                                    <Paper className={classes.paper}><div>
-                                        <h3>{obj.replace(/_/g, ' ').toUpperCase()}</h3>
-                                        <h4>{global[obj]}</h4>
-                                    </div></Paper>
+                                    <Paper>
+                                        <div className={`paper ${conditionalcss}`}>
+                                            <h3>{obj}</h3>
+                                            <h4>{global[obj]}</h4>
+                                        </div>
+                                    </Paper>
                                 </Grid>
                             );
                         })
