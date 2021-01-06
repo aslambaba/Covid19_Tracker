@@ -30,26 +30,34 @@ export default function GlobalStatic() {
         }
         getglobal();
     }, [])
-
+    console.log(global)
     const classes = useStyles();
-
-    return (
-        <div className={classes.root}>
-            <h1 className={classes.main_heading}>Gobally Statics of COVID-19</h1>
-            <Grid container spacing={3}>
-                {
-                    Object.keys(global).map((obj, ind) => {
-                        return (
-                            <Grid item xs={4} key={ind}>
-                                <Paper className={classes.paper}><div>
-                                    <h3>{obj.replace(/_/g,' ').toUpperCase()}</h3>
-                                    <h4>{global[obj]}</h4>
-                                </div></Paper>
-                            </Grid>
-                        );
-                    })
-                }
-            </Grid>
-        </div>
-    );
+    if (Object.keys(global).length == 0) {
+        return (
+            <div>
+                <h1>Loading....</h1>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className={classes.root}>
+                <h1 className={classes.main_heading}>Gobally Statics of COVID-19</h1>
+                <Grid container spacing={3}>
+                    {
+                        Object.keys(global).map((obj, ind) => {
+                            return (
+                                <Grid item xs={4} key={ind}>
+                                    <Paper className={classes.paper}><div>
+                                        <h3>{obj.replace(/_/g, ' ').toUpperCase()}</h3>
+                                        <h4>{global[obj]}</h4>
+                                    </div></Paper>
+                                </Grid>
+                            );
+                        })
+                    }
+                </Grid>
+            </div>
+        );
+    }
 }
