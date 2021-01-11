@@ -7,7 +7,7 @@ export default function Developer() {
     return (
         <div className='MainContainer'>
             <div className='Container'>
-                <img className='aslambabaImage' src={aslambabaImage} />
+                <img className='aslambabaImage' alt='aslambaba' src={aslambabaImage} />
                 <h2 className='title'>Created By Aslam Baba</h2>
                 <a href='https://facebook.com/aslambaba91r' target='_blank' rel="noopener noreferrer"><FaFacebookSquare className='aslambabaSocialicons'/></a>
                 <a href='https://instagram.com/aslambaba91r' target='_blank' rel="noopener noreferrer"><FaInstagram className='aslambabaSocialicons' /></a>

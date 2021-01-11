@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import './style/country.css';
 
-export default function CountryStatics({ }) {
+export default function CountryStatics() {
 
   const [listcountries, Setlistcountries] = useState([]);
   const [country, Setcountry] = useState({});
