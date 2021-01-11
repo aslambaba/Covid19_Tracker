@@ -21,7 +21,7 @@ export default function CountryStatics({ }) {
   const Search = () => {
     var s = document.getElementsByName('Country')[0];
     var text = s.options[s.selectedIndex].text;
-    let selet = listcountries.find(ele => ele.Country == text);
+    let selet = listcountries.find(ele => ele.Country === text);
     delete selet.CountryCode;
     delete selet.Slug;
     delete selet.Premium;
@@ -29,15 +29,15 @@ export default function CountryStatics({ }) {
     Setcountry(selet);
   };
 
-  if (listcountries.length == 0) {
+  if (listcountries.length === 0) {
     return (
       <div className='loadingSection'>
         <h1>Loading...</h1>
       </div>
     );
   }
-  else if (listcountries.length != 0) {
-    if (Object.keys(country).length == 0) {
+  else if (listcountries.length !== 0) {
+    if (Object.keys(country).length === 0) {
       return (
         <div className='SearchSection'>
           <h1>Search By Country</h1>
@@ -52,7 +52,7 @@ export default function CountryStatics({ }) {
         </div>
       );
     }
-    else if (Object.keys(country).length != 0) {
+    else if (Object.keys(country).length !== 0) {
       return (
         <div className='countrybody'>
           <div className='SearchSection'>
@@ -72,10 +72,10 @@ export default function CountryStatics({ }) {
               {
                 Object.keys(country).map((obj, ind) => {
                   let conditionalcss;
-                  if (obj == 'TotalDeaths') {
+                  if (obj === 'TotalDeaths') {
                     conditionalcss = 'totaldeath';
                   }
-                  if (obj == 'TotalRecovered') {
+                  if (obj === 'TotalRecovered') {
                     conditionalcss = 'totalrecovered'
                   }
                   return (

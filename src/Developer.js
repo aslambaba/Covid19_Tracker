@@ -9,12 +9,12 @@ export default function Developer() {
             <div className='Container'>
                 <img className='aslambabaImage' src={aslambabaImage} />
                 <h2 className='title'>Created By Aslam Baba</h2>
-                <a href='https://facebook.com/aslambaba91r' target='_blank'><FaFacebookSquare className='aslambabaSocialicons'/></a>
-                <a href='https://instagram.com/aslambaba91r' target='_blank'><FaInstagram className='aslambabaSocialicons' /></a>
-                <a href='https://github.com/aslambaba' target='_blank'><FaGithub className='aslambabaSocialicons' /></a>
-                <a href='https://linkedin.com/in/aslamsarfraz/' target='_blank'><FaLinkedin className='aslambabaSocialicons' /></a>
+                <a href='https://facebook.com/aslambaba91r' target='_blank' rel="noopener noreferrer"><FaFacebookSquare className='aslambabaSocialicons'/></a>
+                <a href='https://instagram.com/aslambaba91r' target='_blank' rel="noopener noreferrer"><FaInstagram className='aslambabaSocialicons' /></a>
+                <a href='https://github.com/aslambaba' target='_blank' rel="noopener noreferrer"><FaGithub className='aslambabaSocialicons' /></a>
+                <a href='https://linkedin.com/in/aslamsarfraz/' target='_blank' rel="noopener noreferrer"><FaLinkedin className='aslambabaSocialicons' /></a>
                 <br />
-                <a href='https://facebook.com/aslambabaofficial' target='_blank'><button className='FacebookPage'>Facebook Page</button></a>
+                <a href='https://facebook.com/aslambabaofficial' target='_blank' rel="noopener noreferrer"><button className='FacebookPage'>Facebook Page</button></a>
             </div>
 
         </div>

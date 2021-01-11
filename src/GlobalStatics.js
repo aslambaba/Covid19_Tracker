@@ -16,7 +16,7 @@ export default function GlobalStatic() {
         getglobal();
     }, [])
     console.log(global)
-    if (Object.keys(global).length == 0) {
+    if (Object.keys(global).length === 0) {
         return (
             <div className='loadingSection'>
                 <h1>Loading....</h1>
@@ -31,10 +31,10 @@ export default function GlobalStatic() {
                     {
                         Object.keys(global).map((obj, ind) => {
                             let conditionalcss;
-                            if(obj == 'TotalDeaths'){
+                            if(obj === 'TotalDeaths'){
                                 conditionalcss = 'totaldeath';
                             }
-                            if(obj == 'TotalRecovered'){
+                            if(obj === 'TotalRecovered'){
                                 conditionalcss = 'totalrecovered'
                             }
                             return (
