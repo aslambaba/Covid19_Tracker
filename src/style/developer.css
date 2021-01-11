@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Monda&family=Roboto+Mono&display=swap');
+a{
+    text-decoration: none;
+}
+.MainContainer{
+    position: relative;
+    height: 100vh;
+    background-color: #121212;
+    text-align: center !important;
+    padding: 10% 0;
+}
+.aslambabaImage{
+    border-radius: 50%;
+    height: 200px;
+}
+.title{
+    font-size: 22px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+.aslambabaSocialicons{
+    color: white;
+    font-size: 20px;
+    margin: 5px 5px;
+}
+.FacebookPage{
+    font-family: 'Monda', sans-serif;
+    color: white;
+    border: 1px solid silver;
+    background-color: #121212;
+    display: inline;
+    margin: 10px 0px;
+    width: 200px;
+    padding: 10px 10px;
+    text-align: center;
+}
+.FacebookPage:hover{
+    border: 1px solid #254c9b;
+    transition-duration: 500ms;
+}
